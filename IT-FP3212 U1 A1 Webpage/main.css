@@ -1,0 +1,89 @@
+figure {/* specifies top banner size and color */
+	text-align: center;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 150%;
+	border: 5px solid black;
+	background-color: gray;
+}
+body {
+  background-color: #FBF5EF;
+}
+nav ul {/* Utilized a flex command to automatically size the horizontal menu */
+  display:flex; 
+  align-items: stretch; 
+  justify-content: space-between;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  border-radius:20px 20px 20px 20px;
+}
+
+nav li { /* the next "NAV" sections all define the navigation size, color, and behaviour */
+  display: block;
+    flex: 0 1 auto; 
+    list-style-type: none;
+}
+
+nav li a {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+nav li a:link {/* normal color */
+  color: pink;
+}
+nav li a:visited {/* visited color */
+  color: lightblue;
+}
+nav li a:hover { /* hover color */
+  background-color: #111;
+}
+nav li a:active {/* color when activated */
+  color: green;
+}
+h1 {
+  color: blue;
+  text-align: center;
+  margin-left: 20px;
+  margin-right: 20px
+}
+h2 {
+  color: black;
+  text-align: center;
+}
+section header {/* Defines section header attributes */
+	text-align: center;
+}
+Footer {/* Footer section for color, size, and links */
+	text-align: center;
+	font-size: 70%;
+}
+footer ul {
+  display: flex;
+    align-items: stretch; 
+    justify-content: space-between;
+    width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #339;
+  border-radius:10px 10px 10px 10px;
+}
+footer li {
+  display: block;
+    flex: 0 1 auto; 
+    list-style-type: none;
+}
+footer li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 4px 6px;
+  text-decoration: none;
+}
+footer li a:hover {
+  background-color: #111;
+}
