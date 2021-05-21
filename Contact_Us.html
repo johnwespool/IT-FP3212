@@ -16,7 +16,7 @@
 	<nav> 
 	<!-- This is the navigation section, these will be onverted into links to another page -->
 		<ul>
-			<li><a href="https://johnwespool.github.io/IT-FP3212/">Home</a></li>
+			<li><a href="Index.html">Home</a></li>
 			<li><a href="About_Us.html">About Us</a></li>
 			<li><a href="Services.html">Services</a></li>	
 			<li><a href="Gallery.html">Gallery</a></li>
@@ -33,13 +33,36 @@
 			
 			
 			
-			
+<script>
+function validateForm() {
+  var x = document.forms["contact"]["fname"].value;
+  if (x == "") {
+    alert("First Name must be filled out");
+    return false;
+  }
+  var x = document.forms["contact"]["lname"].value;
+  if (x == "") {
+    alert("Last Name must be filled out");
+    return false;
+  }
+  var x = document.forms["contact"]["email"].value;
+  if (x == "") {
+    alert("Email must be filled out");
+    return false;
+  }
+  var x = document.forms["contact"]["optin"].value;
+  if (x == "") {
+    alert("Receive Monthly Newsletter must be filled out");
+    return false;
+  }
+}
+</script>			
 	
 
 	<fieldset>
 	
 	<legend><strong>Join Our Mailing List!</strong></legend>
-	<form action=”response_page.php” method=”post”>
+	<form name="contact" action=thankyou.html onsubmit="return validateForm()">
 	  <label for="fname">First name:</label><br>
 	  <input type="text" name="fname"><br>
 	  <label for="lname">Last name:</label><br>
@@ -69,6 +92,7 @@
 			<input type="submit" value="Submit">
 			</form>
 	</fieldset>
+
 
 
 
