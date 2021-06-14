@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8"/>
+    <title>Invitation Page</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+</head>
+
+<body>
+    <header>
+        <div class="top">
+            <a class="logo" href="index.html">CapellaVolunteers<span class="dotcom">.org</span></a>
+        </div>
+        <nav>
+            <ul class="topnav">
+                <li><a href="index.html">Home</a>
+                </li>
+                <li><a href="invitation.html" class="active">Invitation</a>
+                </li>
+                <li><a href="gallery.html">Gallery</a>
+                </li>
+                <li><a href="registration.html">Registration</a>
+                </li>
+            </ul>
+
+        </nav>
+      </header>
+   
+		<script>
+				<!-- This section declares the , unique IDs were used matched with the id names in the form section -->
+			function invitationreq() {
+            var recnam = document.getElementById("recipientName").value;          
+            var orgnam = document.getElementById("organizationName").value;
+            var evedat = document.getElementById("eventDate").value;
+			var weburl = document.getElementById("websiteURL").value;
+			var hosnam = document.getElementById("hostName").value;
+			
+				<!-- This section makes sure the form is filled in and gives an error/resminder to fill in all info -->
+			if (recnam == "") {
+            alert("Recipient Name must be filled out");
+            return false;
+        }		
+			if (orgnam == "") {
+			alert("Orginaization Name must be filled out");
+			return false;
+		}
+		  if (evedat == "") {
+			alert("Event Date must be filled out");
+			return false;
+		}
+		  if (weburl == "") {
+			alert("Website URL must be filled out");
+			return false;
+		}
+		  if (hosnam == "") {
+			alert("Host Name must be filled out");
+			return false;
+		}
+				<!-- This sectin posts the results from the form to the invitation -->
+			var result = recnam;
+            document.getElementById('spanrecnam').textContent = result;
+			var result = orgnam;
+            document.getElementById('spanorgnam').textContent = result;
+			var result = evedat;
+            document.getElementById('spanevedat').textContent = result;
+			var result = weburl;
+            document.getElementById('spanweburl').textContent = result;
+			var result = hosnam;
+            document.getElementById('spanhosnam').textContent = result;
+             
+        }
+
+
+					<!-- ID values were added for the script section-->
+					<!-- An onsubmit function was added to tell run the function  -->
+		</script>
+   <section id="pageForm">
+        <form action="#" onsubmit="invitationreq()">
+            <label for="recipientName">Recipient name:</label>
+            <input id=recipientName type="text" name="recipientName" placeholder="Enter your Recipient Name" />
+
+            <label for="organizationName">Organization name:</label>
+            <input id=organizationName type="text" name="organizationName" placeholder="Enter your Organization Name" />
+
+            <label for="eventDate">Event Date:</label>
+            <input id=eventDate type="text" name="eventDate" placeholder="Enter your Event Date" />
+
+            <label for="websiteURL">URL:</label>
+            <input id=websiteURL type="text" name="websiteURL" placeholder="Enter your Website URL" />
+
+            <label for="hostName">Host name:</label>
+            <input id=hostName type="text" name="hostName" placeholder="Host Name" />
+			
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+
+				<!-- The span IDs were changed to unique values corresponding to the results section in the script -->
+    <article id="placeholderContent">
+	 <br/>
+	 <br/>
+        Hello <span id="spanrecnam">recipientName</span>!
+        <br/>
+        <br/> You have been invited to volunteer for an event held by <span id="spanorgnam">organizationName</span> on <span id="spanevedat">eventDate</span>. Please come to the following website: <span id="spanweburl">websiteURL</span> to sign up as a volunteer.
+        <br/>
+        <br/> Thanks!
+        <br/>
+        <br/>
+        <span id="spanhosnam">hostName</span>
+    </article>
+    <footer>This events site is for IT-FP3215 tasks.
+    </footer>
+</body>
+
+</html>
