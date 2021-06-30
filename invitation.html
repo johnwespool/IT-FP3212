@@ -28,7 +28,47 @@
       </header>
    
 		<script>
-		
+	
+	
+	
+	
+	
+
+	
+	function requestvol() {
+	
+	
+	//THIS GENERATES THE VOLUNTEEN INPUT FIELDS
+	var altvol = document.getElementById("volunteerquantity").value;
+	for (var i=1; i <= altvol; i++) {
+	
+
+	var x = document.createElement("input");
+	x.setAttribute("type", "text", "required");
+	x.setAttribute("placeholder", "Volunteer # " +i);
+	x.setAttribute("ID", "Volunteer#" +i);
+	x.setAttribute("required", "");
+	document.body.appendChild(x);
+    
+	}
+	// create a submit button
+	var s = document.createElement("input");
+    s.setAttribute("type", "submit");
+	s.setAttribute("value", "Continue");
+	s.setAttribute("onClick", "GenInv();return false");
+	 // Append the submit button to the form
+    document.body.appendChild(s); 
+	//document.getElementById("generateinvitation").removeAttribute("disabled");
+	}
+	
+	
+	
+		 
+	
+	
+	 
+	 
+
 		
 		
 	var down = document.getElementById("startinv");
@@ -42,14 +82,14 @@
 	form.setAttribute("onsubmit", "invitationreq();return false");
 	form.setAttribute("action", "#");    
 
-  
+  //THIS WAS TAKEN OUT SINCE THE RECIPIENT NAME FIELS ARE CREATED VIAL THE LOOP
     // Create an input element for Recipient Name
-    var recnam = document.createElement("input");
-    recnam.setAttribute("type", "text");
-    recnam.setAttribute("name", "recipientName");
-    recnam.setAttribute("placeholder", "Recipient Name");
-	recnam.setAttribute("ID", "recipientName");
-	recnam.setAttribute("required", "");
+    //var recnam = document.createElement("input");
+    //recnam.setAttribute("type", "text");
+    //recnam.setAttribute("name", "recipientName");
+    //recnam.setAttribute("placeholder", "Recipient Name");
+	//recnam.setAttribute("ID", "recipientName");
+	//recnam.setAttribute("required", "");
   
      // Create an input element for Organization Name
      var orgnam = document.createElement("input");
@@ -94,10 +134,13 @@
                 s.setAttribute("type", "submit");
 				s.setAttribute("value", "Submit");
 			
+				var plchld = document.getElementById("SPAN");
+       
+	   
 				
-                  
+				               
                 // Append the full name input to the form
-                form.appendChild(recnam); 
+                //form.appendChild(recnam); 
                                   
                 // Append the organizationName to the form
                 form.appendChild(orgnam); 
@@ -118,31 +161,105 @@
                .appendChild(form); 	 		 
 			}
 			
-		
+		//THIS SECTION WAS TAKEN OUT SINCE THE LOOP WILL FILL VIA GET.ELEMENT INSTEAD OF CHANGING A SPAN
 				// This section declares the , unique IDs were used matched with the id names in the form section -->
 			function invitationreq() {
-            var recnam = document.getElementById("recipientName").value;          
-            var orgnam = document.getElementById("organizationName").value;
-            var evedat = document.getElementById("eventDate").value;
-			var weburl = document.getElementById("websiteURL").value;
-			var hosnam = document.getElementById("hostName").value;
+            //var recnam = document.getElementById("recipientName").value;          
+            //var orgnam = document.getElementById("organizationName").value;
+            //var evedat = document.getElementById("eventDate").value;
+			//var weburl = document.getElementById("websiteURL").value;
+			//var hosnam = document.getElementById("hostName").value;
 			
 				// This section makes sure the form is filled in and gives an error/resminder to fill in all info -->
 				// This section was taken out after testing, left as an example, the inputs on the form were switched to required, -->
 				
 				// This sectin posts the results from the form to the invitation -->
-			var result = recnam;
-            document.getElementById('spanrecnam').textContent = result;
-			var result = orgnam;
-            document.getElementById('spanorgnam').textContent = result;
-			var result = evedat;
-            document.getElementById('spanevedat').textContent = result;
-			var result = weburl;
-            document.getElementById('spanweburl').textContent = result;
-			var result = hosnam;
-            document.getElementById('spanhosnam').textContent = result;
-             
+			//var result = recnam;
+            //document.getElementById('spanrecnam').textContent = result;
+			//var result = orgnam;
+            //document.getElementById('spanorgnam').textContent = result;
+			//var result = evedat;
+            //document.getElementById('spanevedat').textContent = result;
+			//var result = weburl;
+            //document.getElementById('spanweburl').textContent = result;
+			//var result = hosnam;
+            //document.getElementById('spanhosnam').textContent = result;
+            
+		
+		
+		
+		//THIS SECTION CREATES THE APPROPRIATE NUMBER OF INVITATIONS AND FILLS IN THE INFOMATION FROM THE INPUT FIELDS
+		
+		
+		let invnames = new Array();
+		var altvol = document.getElementById("volunteerquantity").value;
+		for (var i=1; i <= altvol; i++) {
+		//document.getElementById("Volunteer#"+i);
+		invnames[i-1]=document.getElementById("Volunteer#"+i).value;
+		//window.alert(invnames[i-1]);
+		}
+		
+		//var articlePlaceholder = document.getElementById("test");
+		
+		for (var i=1; i <= altvol; i++) {
+		//document.getElementById("Volunteer#"+i);
+		//invnames[i-1]=document.getElementById("Volunteer#"+i).value;
+		//document.getElementById("test").textContent = document.getElementById("test").textContent + invnames[i-1];
+		//document.getElementById("test").textContent = document.getElementById("test").textContent + invnames[i-1];
+		//document.getElementById("testDiv").textContent = document.getElementById("testDiv").textContent + invnames[i-1] + "<br/>";
+		var newArticle = document.createElement("article");
+		//newArticle.textContent = "Hello recipient name " + invnames[i-1] + "org name" + document.getElementById("organizationName").value;
+		document.body.appendChild(newArticle);
+		
+		var newDiv = document.createElement("div");
+		newDiv.setAttribute("ID", "NewDiv" +i);
+		newDiv.textContent = "Hello " + invnames[i-1] + "!";
+		//document.getElementById("organizationName").value;
+		//articlePlaceholder.appendChild(newDiv);
+		newArticle.appendChild(newDiv);
+		var newBreak = document.createElement("br");
+		//articlePlaceholder.appendChild(newBreak);
+		newArticle.appendChild(newBreak);
+		//window.alert(invnames[i-1]);
+		var newDiv2 = document.createElement("div");
+		newDiv2.setAttribute("ID", "NewDivA" +i);
+		newDiv2.textContent = "You have been invited to volunteer for an event held by " + document.getElementById("organizationName").value + " on " + document.getElementById("eventDate").value + ". Please come to the following website: " + document.getElementById("websiteURL").value + " to sign up as a volunteer.";
+		newArticle.appendChild(newDiv2);
+		
+		var newBreak = document.createElement("br");
+		//articlePlaceholder.appendChild(newBreak);
+		newArticle.appendChild(newBreak);
+		//window.alert(invnames[i-1]);
+		var newDiv3 = document.createElement("div");
+		newDiv3.setAttribute("ID", "NewDivB" +i);
+		newDiv3.textContent = "Thanks," 
+		newArticle.appendChild(newDiv3);
+		
+		var newBreak = document.createElement("br");
+		//articlePlaceholder.appendChild(newBreak);
+		newArticle.appendChild(newBreak);
+		//window.alert(invnames[i-1]);
+		var newDiv4 = document.createElement("div");
+		newDiv4.setAttribute("ID", "NewDivC" +i);
+		newDiv4.textContent = document.getElementById("hostName").value;
+		var newBreak = document.createElement("br");
+		//articlePlaceholder.appendChild(newBreak);
+		newArticle.appendChild(newBreak);
+		newArticle.appendChild(newDiv4);
+		}	
+			
+			
+			
+			
 			}
+
+
+
+			
+
+
+
+
 
 
 					// ID values were added for the script section-->
@@ -157,31 +274,44 @@
    
    <section id="pageForm">
    
+		<p>Create an Invitation</p>
+		<form onsubmit="requestvol(); return false";>
+		<label for="volunteerquantity">Please Enter the Number of Volunteers (5-10):</label>
+		<input type="number" id="volunteerquantity" name="volunteerquantity"
+        min="5" max="10" required>
+		</form>	
     
-        <p>Create and Invitation</p>
-        <button onClick="GenInv()">
-            Generate Invitation
-        </button>
-        <p id="down"></p>
-   
        
-    </section>
+        <!-- <button onClick="GenInv()" disabled="true" ID="generateinvitation"> -->
+            <!-- Generate Invitation -->
+        <!-- </button> -->
+        <p id="down"></p>
+		<div id="inviteinput">
+		
+		
+		</div>
+       
+    <!-- </section> -->
 
 				<!-- The span IDs were changed to unique values corresponding to the results section in the script -->
-    <article id="placeholderContent">
-	 <br/>
-	 <br/>
-        Hello <span id="spanrecnam">recipientName</span>!
-        <br/>
-        <br/> You have been invited to volunteer for an event held by <span id="spanorgnam">organizationName</span> on <span id="spanevedat">eventDate</span>. Please come to the following website: <span id="spanweburl">websiteURL</span> to sign up as a volunteer.
-        <br/>
-        <br/> Thanks!
-        <br/>
-        <br/>
-        <span id="spanhosnam">hostName</span>
-		<br/>
-		<br/>
-    </article>
+    
+	
+	<!-- <article id="placeholderContent"> -->
+	 <!-- <br/> -->
+	 <!-- <br/> -->
+        <!-- Hello <span id="spanrecnam">recipientName</span>! -->
+        <!-- <br/> -->
+        <!-- <br/> You have been invited to volunteer for an event held by <span id="spanorgnam">organizationName</span> on <span id="spanevedat">eventDate</span>. Please come to the following website: <span id="spanweburl">websiteURL</span> to sign up as a volunteer. -->
+        <!-- <br/> -->
+        <!-- <br/> Thanks! -->
+        <!-- <br/> -->
+        <!-- <br/> -->
+        <!-- <span id="spanhosnam">hostName</span> -->
+		<!-- <br/> -->
+		<!-- <br/> -->
+    <!-- </article> -->
+	<!-- <article id="test"></article> -->
+	<!-- </div> -->
     <footer>This events site is for IT-FP3215 tasks.
     </footer>
 	
