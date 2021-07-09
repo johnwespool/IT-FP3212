@@ -4,6 +4,38 @@
 <head>
     <title>Invitation Page</title>
     <link rel="stylesheet" type="text/css" href="css/main.css" />
+
+<script>
+window.onload = rolloverInit;
+
+
+
+
+//ROLLOVER IMAGES
+function rolloverInit() {
+     for (var i=0; i<document.images.length; i++) {
+        if (document.images[i].parentNode.tagName == "A") {
+           setupRollover(document.images[i]);
+        }
+     }
+}
+
+function setupRollover(theImage) {
+     theImage.outImage = new Image();
+     theImage.outImage.src = theImage.src;
+     theImage.onmouseout = function() {
+        this.src = this.outImage.src;
+     }
+
+     theImage.overImage = new Image();
+     theImage.overImage.src = "images/" + theImage.id + "_on.jpg";
+     theImage.onmouseover = function() {
+        this.src = this.overImage.src;
+     }
+}
+//ROLLOVER IMAGES	
+
+</script>
 </head>
 
 <body>
@@ -29,38 +61,66 @@
 
 <div class="gallery">
   <a target="_blank" href="images/firefighter.jpg">
-    <img src="images/firefighter.jpg" alt="firefighter" width="300" height="200">
+    <img src="images/firefighter.jpg" alt="firefighter" id="firefighter" width="300" height="200">
   </a>
   <div class="desc">Add a description of the image here</div>
 </div>
 
 <div class="gallery">
   <a target="_blank" href="images/work.jpg">
-    <img src="images/work.jpg" alt="work" width="300" height="200">
+    <img src="images/work.jpg" alt="work" id="work" width="300" height="200">
   </a>
   <div class="desc">Add a description of the image here</div>
 </div>
 
 <div class="gallery">
   <a target="_blank" href="images/silhouette.jpg">
-    <img src="images/silhouette.jpg" alt="silhouette" width="300" height="200">
+    <img src="images/silhouette.jpg" alt="silhouette" id="silhouette" width="300" height="200">
   </a>
   <div class="desc">Add a description of the image here</div>
 </div>
 
 <div class="gallery">
   <a target="_blank" href="images/event.jpg">
-    <img src="images/event.jpg" alt="event" width="300" height="200">
+    <img src="images/event.jpg" alt="event" id="event" width="300" height="200">
   </a>
   <div class="desc">Add a description of the image here</div>
 </div>
 
     </section>
 
+<!-- PRELOAD IMAGES -->
+<div class="hidden">
+	<script type="text/javascript">
+				if (document.images) {
+				img1 = new Image();
+				img2 = new Image();
+				img3 = new Image();
+				img4 = new Image();
+				img5 = new Image();
+				img6 = new Image();
+				img7 = new Image();
+				img8 = new Image();
 
+				img1.src = "images/firefighter.jpg";
+				img2.src = "images/firefighter_on.jpg";
+				img3.src = "images/work.jpg";
+				img3.src = "images/work_on.jpg";
+				img3.src = "images/silhouette.jpg";
+				img3.src = "images/silhouette_on.jpg";
+				img3.src = "images/event.jpg";
+				img3.src = "images/event_on.jpg";
+			}
+	</script>
+</div>
+<!-- PRELOAD IMAGES -->
 
-    <footer>This events site is for IT-FP3215 tasks.
+    <footer class="below">This events site is for IT-FP3215 tasks.
     </footer>
 </body>
 
 </html>
+
+
+
+
