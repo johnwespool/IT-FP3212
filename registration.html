@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>Invitation Page</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+</head>
+
+<script>
+
+  function checkForm(form)
+  {
+   
+	var alphanumeric = /^[\w ]+$/;
+	var passw=  /^.{8,}$/;
+	var pw1= form.password1.value;
+	var pw2= form.passwordVerify.value;
+	var textstring1 = /^[A-Za-z]+$/;
+	var textstring2 = /^[A-Za-z]+$/;
+	var emailentry = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+	var phoneentry = /^\(\d{3}\) \d{3}-\d{4}$/;
+
+
+//USERNAME BLANK
+    if(form.userName.value == "") {
+      document.getElementById('blankuserName').innerHTML = "This Field is Blank";
+      form.userName.focus();
+     return false;
+    }
+	
+//USERNAME - verifies alphanumeric and not blank
+    else if(!alphanumeric.test(form.userName.value)) {
+      document.getElementById('blankuserName').innerHTML = "Only Alphanumeric Values Allowed";
+      form.userName.focus();
+     return false;
+    }
+	
+	
+	
+//PASSWORD - Verifies a minmum of 8 characters and not blank
+	if(!passw.test(form.password1.value)) { 
+	document.getElementById('passwordspan').innerHTML = "Password Must Contain a Minimum of 8 Characters";
+	form.password1.focus();
+	return false;
+	} 
+	
+	
+ //PASSWORDVERIFY - Verifies the passwords match and not blank
+	if(pw1 != pw2) { 
+	document.getElementById('passwordVerifyspan').innerHTML = "Passwords Must Match";
+	form.passwordVerify.focus();
+	return false;
+	} 
+
+//FIRST NAME - verifies alpha only and not blank
+	if(form.firstName.value == "") {
+      document.getElementById('blankfirstName').innerHTML = "This Field is Blank";
+      form.firstName.focus();
+     return false;
+    }
+    if(!textstring1.test(form.firstName.value)) {
+      document.getElementById('blankfirstName').innerHTML = "Only Letter Values Allowed";
+      form.userName.focus();
+     return false;
+    }
+
+//LAST NAME - verifies alpha only and not blank
+	if(form.lName.value == "") {
+      document.getElementById('blanklastName').innerHTML = "This Field is Blank";
+      //form.lastName.focus();
+     return false;
+    }
+    if(!textstring2.test(form.lName.value)) {
+      document.getElementById('blanklastName').innerHTML = "Only Letter Values Allowed";
+      form.lastName.focus();
+     return false;
+    }
+
+//EMAIL - allows for blank or proper xxx@xxx.xxx format
+	if(form.emailfield.value == "") {	  
+	 }
+	 else if (!emailentry.test(form.emailfield.value)) {
+	  document.getElementById('blankemail').innerHTML = "Please Use the xxx@xxx.xxx Format";
+      form.emailfield.focus();
+     return false;
+    }
+   
+//PHONE - allows for blank or proper (xxx) xxx-xxxx format
+	if(form.phonenumb.value == "") {	  
+     }
+	else if (!phoneentry.test(form.phonenumb.value)) {
+	  document.getElementById('blankphoneNumber').innerHTML = "Please Use the (xxx) xxx-xxxx Format";
+      form.phonenumb.focus();
+     return false;
+    }
+
+
+
+
+	alert ("Congratulations, you have successfully registered!");
+    return true;
+
+
+}
+</script>
+
+<body>
+    <header>
+        <div class="top">
+            <a class="logo" href="index.html">CapellaVolunteers<span class="dotcom">.org</span></a>
+        </div>
+        <nav>
+            <ul class="topnav">
+                <li><a href="index.html">Home</a>
+                </li>
+                <li><a href="invitation.html">Invitation</a>
+                </li>
+                <li><a href="gallery.html">Gallery</a>
+                </li>
+                <li><a href="registration.html" class="active">Registration</a>
+                </li>
+            </ul>
+
+        </nav>
+    </header>
+    <section id="pageForm">
+        <form action="#">
+            <label for="userName">Username: <span id="blankuserName">    </span> 
+			</label>
+            <input type="text" name="userName" placeholder="Enter your Username" id="userName"  />
+
+            <label for="Password">Password: <span id="passwordspan">
+            </label>
+            <input type="password" name="password1" placeholder="Enter your Password"  />
+
+            <label for="passwordVerify">Verify your Password: <span id="passwordVerifyspan">
+            </label>
+            <input type="password" name="passwordVerify" placeholder="Enter in your Password again"  />
+
+            <label for="firstName">First Name: <span id="blankfirstName">    </span>
+            </label>
+            <input type="text" name="firstName" placeholder="Enter your First Name" id="firstName"  />
+
+            <label for="lName">Last Name: <span id="blanklastName">    </span>
+            </label>
+            <input type="text" name="lName" placeholder="Enter your First Name" id="lName"  />
+           
+		   <label for="emailfield">Email: <span id="blankemail">    </span>
+            </label>
+            <input type="text" name="emailfield" placeholder="Enter your Email Address" id="emailfield"  />
+			
+			<label for="phonenumb">Phone Number: <span id="blankphoneNumber">    </span>
+            </label>
+            <input type="text" name="phonenumb" placeholder="Enter your Phone Number (xxx) xxx-xxxx" id="phonenumb" />
+			
+			<label for="signUpNewsletter">Sign up for newsletter:
+            </label>
+			  <input type="radio" name="signUpNewsletter" value="Yes" checked> Yes 
+				<input type="radio" name="signUpNewsletter" value="No"> No
+            
+			<input type="submit" value="Next step" onClick="return checkForm(form);return false;">
+        </form>
+    </section>
+
+    <footer class="registration">
+	This events site is for IT-FP3215 tasks.
+    </footer>
+</body>
+
+</html>
