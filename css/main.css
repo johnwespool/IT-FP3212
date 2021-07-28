@@ -147,7 +147,7 @@ div.centered {
   margin-right: auto;
   width: 50%;
 }
-footer.below {
+footer.gallery {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -156,3 +156,63 @@ footer.below {
     background-color: #efefef;
     text-align: center;
 }
+footer.registration {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #efefef;
+    text-align: center;
+}
+span#blankuserName {
+	color: #ff3300;
+}
+span#passwordspan {
+	color: #ff3300;
+}
+span#passwordVerifyspan {
+	color: #ff3300;
+}
+span#blankfirstName {
+	color: #ff3300;
+}
+span#blanklastName {
+	color: #ff3300;
+}
+span#blankemail {
+	color: #ff3300;
+}
+span#blankphoneNumber {
+	color: #ff3300;
+}
+span#phonenumb {
+	color: #ff3300;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
