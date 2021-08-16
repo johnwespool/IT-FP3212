@@ -45,10 +45,17 @@
   
     function storeValues(form)  
   {
-    setCookie("Name", form.userName.value);
+    setCookie("User", form.userName.value);
     setCookie("Password", form.password1.value);
     setCookie("PasswordCheck", form.passwordVerify.value);
     setCookie("First", form.firstName.value);
+    setCookie("Last", form.lName.value);
+    setCookie("Email", form.emailfield.value);
+    setCookie("Phone", form.phonenumb.value);
+    setCookie("Interest 1", form.interest-1.value);
+    setCookie("Interest 2", form.interest-2.value);
+    setCookie("Interest 3", form.interest-3.value);
+    setCookie("Newsletter", form.signUpNewsletter.value);
     return true;
   }
 
