@@ -35,10 +35,10 @@
    <body>     
       <form name="myForm" method="submit" action="getcookie.html" onsubmit="return storeValues(this);">
 <fieldset>
-<label>Field 1</label><span><input type="text" size="32" name="field1" value=""></span>
-<label>Field 2</label><span><input type="text" size="32" name="field2" value=""></span>
-<label>Field 3</label><span><input type="text" size="32" name="field3" value=""></span>
-<label>Field 4</label><span><input type="text" size="32" name="field4" value=""></span>
+<input type="hidden" id="userName" name="userName" value="NOTUPDATED">
+			<input type="hidden" id="field2" name="field2" value="NOTUPDATED">
+			<input type="hidden" id="field3" name="field3" vvalue="NOTUPDATED">
+			<input type="hidden" id="field4" name="field4" value="NOTUPDATED">
 <span><input type="submit" value="Set Cookies">
 <input type="button" onclick="clearCookies();" value="Clear Cookies"></span>
 </fieldset>
