@@ -37,6 +37,8 @@
 	
 	
 	
+	
+	
 //PASSWORD - Verifies a minmum of 8 characters and not blank
 	if(!passw.test(form.password1.value)) { 
 	document.getElementById('passwordspan').innerHTML = "Password Must Contain a Minimum of 8 Characters";
@@ -94,14 +96,10 @@
      return false;
     }
 
-
-
-
-	alert ("Congratulations, you have successfully registered!");
-    return true;
-
-
+	
 }
+
+
 </script>
 
 <body>
@@ -124,11 +122,12 @@
         </nav>
     </header>
     <section id="pageForm">
-        <form action="#">
+ 
+		<form action="interests.html" method="submit">
             <label for="userName">Username: <span id="blankuserName">    </span> 
 			</label>
-            <input type="text" name="userName" placeholder="Enter your Username" id="userName"  />
-
+            <input type="text" name="userName" placeholder="Enter your Username" id="userName" value="" />
+							
             <label for="Password">Password: <span id="passwordspan">
             </label>
             <input type="password" name="password1" placeholder="Enter your Password"  />
@@ -140,23 +139,33 @@
             <label for="firstName">First Name: <span id="blankfirstName">    </span>
             </label>
             <input type="text" name="firstName" placeholder="Enter your First Name" id="firstName"  />
-
-            <label for="lName">Last Name: <span id="blanklastName">    </span>
+			
+		            <label for="lName">Last Name: <span id="blanklastName">    </span>
             </label>
             <input type="text" name="lName" placeholder="Enter your First Name" id="lName"  />
-           
+			
 		   <label for="emailfield">Email: <span id="blankemail">    </span>
             </label>
             <input type="text" name="emailfield" placeholder="Enter your Email Address" id="emailfield"  />
-			
+							
 			<label for="phonenumb">Phone Number: <span id="blankphoneNumber">    </span>
             </label>
             <input type="text" name="phonenumb" placeholder="Enter your Phone Number (xxx) xxx-xxxx" id="phonenumb" />
 			
 			<label for="signUpNewsletter">Sign up for newsletter:
             </label>
-			  <input type="radio" name="signUpNewsletter" value="Yes" checked> Yes 
+			  <input type="radio" name="signUpNewsletter" id="signUpNewsletter" value="Yes" checked> Yes 
 				<input type="radio" name="signUpNewsletter" value="No"> No
+				
+				
+			<input type="text" id="userNamehidden" name="userNamehidden" value="">
+			<input type="hidden" id="passwordhidden" name="passwordhidden" value="</php echo$_POST['password1'] ?>">
+			<input type="hidden" id="passwordverifyhidden" name="passwordverifyhidden" value="</php echo$_POST['passwordVerify'] ?>">
+			<input type="hidden" id="firstNamehidden" name="firstNamehidden" value="</php echo$_POST['firstName'] ?>">
+			<input type="hidden" id="lastNamehidden" name="lastNamehidden" value="</php echo$_POST['lName'] ?>">
+			<input type="hidden" id="emailfieldhidden" name="emailfieldhidden" value="</php echo$_POST['emailfield'] ?>">
+			<input type="hidden" id="phonenumbhidden" name="phonenumbhidden" value="</php echo$_POST['phonenumb'] ?>">
+			<input type="hidden" id="signUpNewsletterhidden" name="signUpNewsletter" value="</php echo$_POST['signUpNewsletter'] ?>">
             
 			<input type="submit" value="Next step" onClick="return checkForm(form);return false;">
         </form>
