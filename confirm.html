@@ -6,7 +6,37 @@
     <link rel="stylesheet" type="text/css" href="css/main.css" />
 </head>
 
-<body>
+<body onload="getCookie(name)";>
+
+<script>
+
+<script type = "text/javascript">
+         <!--
+            function ReadCookie() {
+               var allcookies = document.cookie;
+               document.write ("All Cookies : " + allcookies );
+               
+               // Get all the cookies pairs in an array
+               cookiearray = allcookies.split(';');
+               
+               // Now take key value pair out of this array
+               for(var i=0; i<cookiearray.length; i++) {
+                  name = cookiearray[i].split('=')[0];
+                  value = cookiearray[i].split('=')[1];
+                  document.write ("Key is : " + name + " and Value is : " + value);
+               }
+            }
+         //-->
+    
+
+</script>
+
+
+
+
+
+
+
     <header>
         <div class="top">
             <a class="logo" href="index.html">CapellaVolunteers<span class="dotcom">.org</span></a>
@@ -27,11 +57,35 @@
     </header>
     <section id="pageFormContent">
 
-            <!--
+            <form name = "myform" action = "">
+         <p> click the following button and see the result:</p>
+         <input type = "button" value = "Get Cookie" onclick = "ReadCookie()"/>
+      </form>      
+			
+			<!--
 			Process content to display content on screen
 			
 			-->
-            
+			<!-- <input type="text" id="userName" name="userName" value="">
+			<input type="text" id="password1" name="password1" value="">
+			<input type="text" id="passwordVerify" name="passwordVerify" value="">
+			<input type="text" id="firstName" name="firstName" value="">
+			<input type="text" id="lName" name="lName" value="">
+			<input type="text" id="emailfield" name="emailfield" value="">
+			<input type="text" id="phonenumb" name="phonenumb" value="">
+			<input type="text" id="signUpNewsletter" name="signUpNewsletter" value=""> 
+			<input type="text" id="interest-1" name="interest-1" value=""> 
+			<input type="text" id="interest-2" name="interest-2" value=""> 
+			<input type="text" id="interest-3" name="interest-3" value=""> 
+			<input type="text" id="comment" name="comment" value=""> 
+			<input type="text" id="referred" name="referred" value=""> 		 -->
+			
+			<ul>
+  <li>userName: <script type="text/javascript">document.write(getCookie("userName"));</script>q</li>
+  <li>field2: <script type="text/javascript">document.write(getCookie("field2"));</script>w</li>
+  <li>field3: <script type="text/javascript">document.write(getCookie("field3"));</script>e</li>
+  <li>field4: <script type="text/javascript">document.write(getCookie("field4"));</script>r</li>
+</ul>
 
     </section>
 
