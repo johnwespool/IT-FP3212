@@ -10,26 +10,7 @@
 
 <script>
 
- var today = new Date();
-  var expiry = new Date(today.getTime() + 30 * 24 * 3600 * 1000); // plus 30 days
-
-  function setCookie(name, value)
-  {
-    document.cookie=name + "=" + escape(value) + "; path=/; expires=" + expiry.toGMTString();
-  }
-
-</script>
-<script type="text/javascript">
-
-  function storeValues(form)  
-  {
-    setCookie("field1", form.field1.value);
-    setCookie("field2", form.field2.value);
-    setCookie("field3", form.field3.value);
-    setCookie("field4", form.field4.value);
-    return true;
-  }
-    
+ 
 
 </script>
 
@@ -81,13 +62,7 @@
 			<input type="text" id="interest-3" name="interest-3" value=""> 
 			<input type="text" id="comment" name="comment" value=""> 
 			<input type="text" id="referred" name="referred" value=""> 		 -->
-			
-			<ul>
-  <li>userName: <script type="text/javascript">document.write(getCookie("userName"));</script>q</li>
-  <li>field2: <script type="text/javascript">document.write(getCookie("field2"));</script>w</li>
-  <li>field3: <script type="text/javascript">document.write(getCookie("field3"));</script>e</li>
-  <li>field4: <script type="text/javascript">document.write(getCookie("field4"));</script>r</li>
-</ul>
+
 
     </section>
 
