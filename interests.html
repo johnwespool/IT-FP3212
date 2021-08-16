@@ -6,7 +6,56 @@
     <link rel="stylesheet" type="text/css" href="css/main.css" />
 </head>
 
-<body>
+<script type="text/javascript">
+
+ //QUERY AND ASSIGN TO HIDDEN FIELDS
+ function storeHidden() {
+ const urlParams = new URLSearchParams(window.location.search);
+  document.getElementById("userName").value = urlParams.get('userName');
+  document.getElementById("password1").value = urlParams.get('password1');
+  document.getElementById("passwordVerify").value = urlParams.get('passwordVerify');
+  document.getElementById("firstName").value = urlParams.get('firstName');
+  document.getElementById("lName").value = urlParams.get('lName');
+  document.getElementById("emailfield").value = urlParams.get('emailfield');
+  document.getElementById("phonenumb").value = urlParams.get('phonenumb');
+  document.getElementById("signUpNewsletter").value = urlParams.get('signUpNewsletter');     
+  }
+  //SHOW DATA ASSIGNED TO HIDDEN FIELDS
+  function showHidden() {
+  var alertString;
+  alertString = "User Name: "  + document.getElementById("userName").value + ", \n";
+  alertString = alertString + "Password: "  + document.getElementById("password1").value + ", \n";
+  alertString = alertString + "Password Verify: " + document.getElementById("passwordVerify").value + ", \n";
+  alertString = alertString + "First: " + document.getElementById("firstName").value + ", \n";
+  alertString = alertString + "Last: " + document.getElementById("lName").value + ", \n";
+  alertString = alertString + "Email: " + document.getElementById("emailfield").value + ", \n";
+  alertString = alertString + "Phone: " + document.getElementById("phonenumb").value + ", \n";
+  alertString = alertString + "SignUpNewsletter: " + document.getElementById("signUpNewsletter").value + ", \n";
+  alert(alertString);
+}
+  
+ //COOKIE
+ var today = new Date();
+  var expiry = new Date(today.getTime() + 30 * 24 * 3600 * 1000); // plus 30 days
+
+  function setCookie(name, value)
+  {
+    document.cookie=name + "=" + escape(value) + "; path=/; expires=" + expiry.toGMTString();
+  }
+  
+    function storeValues(form)  
+  {
+    setCookie("userName", document.userName.value);
+    setCookie("field2", form.field2.value);
+    setCookie("field3", form.field3.value);
+    setCookie("field4", form.field4.value);
+    return true;
+  }
+
+</script>
+
+
+<body onload="storeHidden()">
     <header>
         <div class="top">
             <a class="logo" href="index.html">CapellaVolunteers<span class="dotcom">.org</span></a>
@@ -26,22 +75,54 @@
         </nav>
     </header>
     <section id="pageForm">
-        <form action="#">
+        <form method="post" action="confirm.html" onsubmit="return storeValues(this);">
 			
-            <!--
-			Include other form fields here
 			
-			-->
-            <input type="hidden" name="userName"/>
-            <input type="hidden" name="password"/>
-            <input type="hidden" name="passwordVerify" />
-            <input type="hidden" name="firstName" />
-            <input type="hidden" name="lastName" />
-            <input type="hidden" name="email"/>
-            <input type="hidden" name="lastName" />
-			<input type="hidden" name="signUpNewsletter"/ >
+			<p>Select your Interests:</p>
+		<p>
+			<label for="interest-1"> <input type="checkbox" name="interest" value="Coding" id="interest-1" />Coding</label>
+		</p>
+		<p>
+			<label for="interest-2"><input type="checkbox" name="interest" value="HTML" id="interest-2" />HTML</label>
+		</p>
+		<p>
+			<label for="interest-3"><input type="checkbox" name="interest" value="JavaScript" id="interest-3" />JavaScript</label>
+		</p>
+
+		<!-- <button id="btn">Get Selected Colors</button> -->
 			
-            <input type="submit" value="Register">
+		<label for="signUpNewsletter">Sign up for newsletter:
+            </label>
+			  <input type="radio" name="signUpNewsletter" id="signUpNewsletter" value="Yes" checked> Yes 
+				<input type="radio" name="signUpNewsletter" value="No"> No
+
+
+			<br>
+			<br>
+		<label for="comment">Comments:
+            </label>	
+			<br>
+		<textarea id="comment" rows="4" cols="50" name="comment" form="usrform">Tell us your comments</textarea>	
+			<br>
+			<br>
+		<label for="referred">Referred By:</label><br>
+		<input type="text" id="referred" name="referred"><br>	
+	
+            <!--HIDDEN FIELDS FROM REGISTRATION PAGE-->
+			<input type="hidden" id="userName" name="userName" value="NOTUPDATED">
+			<input type="hidden" id="password1" name="password1" value="NOTUPDATED">
+			<input type="hidden" id="passwordVerify" name="passwordVerify" vvalue="NOTUPDATED">
+			<input type="hidden" id="firstName" name="firstName" value="NOTUPDATED">
+			<input type="hidden" id="lName" name="lName" value="NOTUPDATED">
+			<input type="hidden" id="emailfield" name="emailfield" value="NOTUPDATED">
+			<input type="hidden" id="phonenumb" name="phonenumb" value="NOTUPDATED">
+			<input type="hidden" id="signUpNewsletter" name="signUpNewsletter" value="NOTUPDATED">
+		
+		<button type="button"
+		onclick="showHidden()">
+		Click me to display Hidden input</button>
+			
+            <input type="submit" value="Register" />
         </form>
     </section>
 
