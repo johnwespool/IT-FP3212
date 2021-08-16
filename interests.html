@@ -45,10 +45,10 @@
   
     function storeValues(form)  
   {
-    setCookie("userName", document.userName.value);
-    setCookie("password1", form.password1.value);
-    setCookie("passwordVerify", form.passwordVerify.value);
-    setCookie("firstName", form.firstName.value);
+    setCookie("Name", form.userName.value);
+    setCookie("Password", form.password1.value);
+    setCookie("PasswordCheck", form.passwordVerify.value);
+    setCookie("First", form.firstName.value);
     return true;
   }
 
@@ -122,7 +122,7 @@
 		onclick="showHidden()">
 		Click me to display Hidden input</button>
 			
-            <input type="submit" value="Register" value="Set Cookies">
+            <input type="submit" value="Register">
         </form>
     </section>
 
