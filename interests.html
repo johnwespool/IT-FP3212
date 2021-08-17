@@ -58,6 +58,33 @@
     setCookie("Newsletter", form.signUpNewsletter.value);
     return true;
   }
+  
+  function interest1() {
+  var checkBox = document.getElementById("interest_1");
+  var text = document.getElementById("interest_1");
+  if (checkBox.checked == true){
+  document.getElementById("interest_1").value = "Coding";}
+  if (checkBox.checked == false){
+     document.getElementById("interest_1").value = ""}
+}
+
+function interest2() {
+  var checkBox = document.getElementById("interest_2");
+  var text = document.getElementById("interest_1");
+  if (checkBox.checked == true){
+  document.getElementById("interest_2").value = "Coding";}
+  if (checkBox.checked == false){
+     document.getElementById("interest_2").value = ""}
+}
+
+function interest3() {
+  var checkBox = document.getElementById("interest_3");
+  var text = document.getElementById("interest_1");
+  if (checkBox.checked == true){
+  document.getElementById("interest_3").value = "Coding";}
+  if (checkBox.checked == false){
+     document.getElementById("interest_3").value = ""}
+}
 
 </script>
 
@@ -84,17 +111,18 @@
     <section id="pageForm">
         <form method="submit" action="confirm.html" onsubmit="return storeValues(this);" >
 			
-		<fieldset>	
+		<p>	
 			<legend>Select your Interests:</legend>
-		<div>
-			<label for="interest-1"> <type="checkbox" name="interest" value="Coding" id="interest_1" />Coding</label>
-		</div>
-		<div>
-			<label for="interest-2"><type="checkbox" name="interest" value="HTML" id="interest_2" />HTML</label>
-		</div>
-		<div>
-			<label for="interest-3"><type="checkbox" name="interest" value="JavaScript" id="interest_3" />JavaScript</label>
-		</div>
+
+		<p>
+			<label for="interest-1"><input type="checkbox" name="interest" value="" id="interest_1" onclick="interest1()"/>Coding</label>
+		</p>
+		<p>
+			<label for="interest-2"><input type="checkbox" name="interest" value="" id="interest_2" onclick="interest2()"/>HTML</label>
+		</p>
+		<p>
+			<label for="interest-3"><input type="checkbox" name="interest" value="" id="interest_3" onclick="interest3()"/>JavaScript</label>
+		</p>
 
 		</fieldset>
 			
