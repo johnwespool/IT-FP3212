@@ -56,7 +56,7 @@
     setCookie("Interest 2", form.interest_2.value);
     setCookie("Interest 3", form.interest_3.value);
 	setCookie("Newsletter", form.signUpNewsletter.value);
-	setCookie("Comments", form.comments.value);
+	setCookie("Comments", form.comments.form);
 	setCookie("Referred", form.referred.value);
     return true;
   }
@@ -143,7 +143,7 @@ function interest3() {
 			<br>
 			<br>
 		<label for="referred">Referred By:</label><br>
-		<input type="text" id="referred" name="referred"><br>	
+		<input type="text" id="referred" name="referred" value=""><br>	
 	
             <!--HIDDEN FIELDS FROM REGISTRATION PAGE-->
 			<input type="hidden" id="userName" name="userName" value="NOTUPDATED">
