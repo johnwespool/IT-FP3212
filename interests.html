@@ -45,9 +45,10 @@
   
     function storeValues(form)  
   {
-    var x = document.getElementById("comment1").value;
-  	document.getElementById("comment").value = x;
-	  alert (document.getElementById("comment").value);
+     var x = document.getElementById("comment1").value;
+    document.getElementById("comment").value = x;
+     var x = document.getElementById("referred1").value;
+    document.getElementById("referred").value = x;
     setCookie("User", form.userName.value);
     setCookie("Password", form.password1.value);
     setCookie("PasswordCheck", form.passwordVerify.value);
@@ -146,7 +147,7 @@ function interest3() {
 			<br>
 			<br>
 		<label for="referred">Referred By:</label><br>
-		<input type="text" id="referred" name="referred" value=""><br>	
+		<input type="text" id="referred1" name="referred1" value=""><br>	
 	
             <!--HIDDEN FIELDS FROM REGISTRATION PAGE-->
 			<input type="hidden" id="userName" name="userName" value="NOTUPDATED">
@@ -158,6 +159,7 @@ function interest3() {
 			<input type="hidden" id="phonenumb" name="phonenumb" value="NOTUPDATED">
 			<input type="hidden" id="signUpNewsletter" name="signUpNewsletter" value="NOTUPDATED">
 	    		<input type="hidden" id="comment" name="comment" value="NOTUPDATED">
+	    		<input type="hidden" id="referred" name="referred" value="NOTUPDATED">
 		
 		<button type="button"
 		onclick="showHidden()">
