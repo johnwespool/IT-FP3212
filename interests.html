@@ -45,6 +45,9 @@
   
     function storeValues(form)  
   {
+    var x = document.getElementById("comment1").value;
+  	document.getElementById("comment").innerHTML = x;
+	  alert document.getElementById("comment").value;
     setCookie("User", form.userName.value);
     setCookie("Password", form.password1.value);
     setCookie("PasswordCheck", form.passwordVerify.value);
@@ -55,9 +58,9 @@
     setCookie("Interest 1", form.interest_1.value);
     setCookie("Interest 2", form.interest_2.value);
     setCookie("Interest 3", form.interest_3.value);
-	setCookie("Newsletter", form.signUpNewsletter.value);
-	setCookie("Comments", form.comment.value);
-	setCookie("Referred", form.referred.value);
+    setCookie("Newsletter", form.signUpNewsletter.value);
+    setCookie("Comments", form.comment.value);
+    setCookie("Referred", form.referred.value);
     return true;
   }
   
@@ -139,7 +142,7 @@ function interest3() {
 		<label for="comment">Comments:
             </label>	
 			<br>
-		<textarea id="comment" rows="4" cols="50" name="comment" form="usrform"></textarea>	
+		<textarea id="comment1" rows="4" cols="50" ></textarea>	
 			<br>
 			<br>
 		<label for="referred">Referred By:</label><br>
@@ -154,6 +157,7 @@ function interest3() {
 			<input type="hidden" id="emailfield" name="emailfield" value="NOTUPDATED">
 			<input type="hidden" id="phonenumb" name="phonenumb" value="NOTUPDATED">
 			<input type="hidden" id="signUpNewsletter" name="signUpNewsletter" value="NOTUPDATED">
+	    		<input type="hidden" id="comment" name="comment" value="NOTUPDATED">
 		
 		<button type="button"
 		onclick="showHidden()">
