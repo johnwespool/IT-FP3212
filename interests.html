@@ -56,7 +56,7 @@
     setCookie("Interest 2", form.interest_2.value);
     setCookie("Interest 3", form.interest_3.value);
 	setCookie("Newsletter", form.signUpNewsletter.value);
-	setCookie("Comments", form.comments.form);
+	setCookie("Comments", form.comments.value);
 	setCookie("Referred", form.referred.value);
     return true;
   }
@@ -139,7 +139,7 @@ function interest3() {
 		<label for="comment">Comments:
             </label>	
 			<br>
-		<textarea id="comment" rows="4" cols="50" name="comment" form="usrform"></textarea>	
+		<input type="textarea" id="comment" rows="4" cols="50" name="comment" form="usrform"></textarea>	
 			<br>
 			<br>
 		<label for="referred">Referred By:</label><br>
